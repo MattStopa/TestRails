@@ -14,3 +14,21 @@
  *= require_self
  */
 
+
+.tag { 
+  padding: 5px;
+  background-color: #8ea7af;
+  color: #fff;
+  margin-right: 5px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.flex { 
+    display: flex;
+}
+
+.hidden { 
+  display: none;
+}
+

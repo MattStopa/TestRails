@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_225951) do
+ActiveRecord::Schema.define(version: 2021_04_18_030042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "name"
+    t.bigint "tag_id"
+    t.bigint "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_appointments_on_book_id"
+    t.index ["tag_id"], name: "index_appointments_on_tag_id"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -30,4 +40,25 @@ ActiveRecord::Schema.define(version: 2021_04_17_225951) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tag_foods", force: :cascade do |t|
+    t.string "name"
+    t.bigint "tag_id"
+    t.bigint "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_tag_foods_on_book_id"
+    t.index ["tag_id"], name: "index_tag_foods_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.string "tag_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "appointments", "books"
+  add_foreign_key "appointments", "tags"
+  add_foreign_key "tag_foods", "books"
+  add_foreign_key "tag_foods", "tags"
 end

@@ -1,0 +1,34 @@
+<%= form_with(model: tag, local: true) do |form| %>
+  <% if tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+      <% tag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tag_type %>
+    <select name="tag[tag_type]"> 
+      <% %w[tag vitamin mineral].each do |type| %> 
+        <option <%= type == tag.tag_type ? ' selected' : ''%> >
+          <%= type %>
+        </option>
+      <% end %>  
+    </select>
+    
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -24,17 +24,30 @@
     <div data-controller="hello">
       <%= book.publication_year %>
 
-      <% ['Animal' , 'Vegetable', 'Mineral'].each do |item| %>
-        <div data-action="click->hello#greet" data-info="<%= item %>" >
-          <%= item %>
+      <div class="flex">
+        <input type="text"  data-action="focus->hello#show" >
+        <div style="" data-target="hello.existingTags" class="flex">
+          <% book.tags.each do |item|  %>
+            <div class="tag" data-action="click->hello#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
+          <% end %>
         </div>
-      <% end %>
-      <input data-target="hello.publicationYear" name="book[author]" type="hidden">
-      # <button >Greet</button>
+      </div>
+
+      <div class=" hidden" data-target="hello.dropdown">
+        <% Tag.all.each do |item| %>
+          <div class="tag <%= book.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> " 
+                data-action="click->hello#addItem" data-info="<%= item.id %>" >
+            <%= item.name %>
+          </div>
+        <% end %>
+      <input data-target="hello.finalValue" name="book[tags]" type="hidden" value="<%= book.tags.map(&:id).join(",") %>">
     </div>
 
-    
+    <input name="book[author]">
   </div>
+
+
+
 
   <div class="actions">
     <%= form.submit %>
