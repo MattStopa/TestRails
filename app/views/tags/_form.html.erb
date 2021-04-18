@@ -25,7 +25,14 @@
         </option>
       <% end %>  
     </select>
-    
+  </div>
+
+  <div data-controller="image-preview">
+    <div class="field">
+    <%= form.label :image %>
+      <input type="text" placeholder="Image" data-target='image-preview.input'  data-action="keyup->image-preview#change" > 
+      <img src="" class="w-40 h-40 hidden" data-target="image-preview.image">
+    </div>
   </div>
 
   <div class="actions">

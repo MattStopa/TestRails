@@ -21,6 +21,7 @@
 
 //= require controllers/hello_controller
 //= require controllers/search_bar_controller
+//= require controllers/spreadsheet_controller
 
 setTimeout( function() {
   window.application = Stimulus.Application.start()

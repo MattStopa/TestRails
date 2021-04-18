@@ -53,11 +53,11 @@ body {
   background: #d8dafc;
 }
 
-table { 
+.crazy-table table { 
   width: 100%  ;
 }
 
-th { 
+.crazy-table  th { 
   text-align: left;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -70,7 +70,7 @@ th {
   background-color: #e5e7eb;
 }
 
-td { 
+.crazy-table  td { 
   text-align: left;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -83,12 +83,12 @@ td {
   border-bottom: 1px solid rgb(226 225 225);
 }
 
-tr { 
+.crazy-table  tr { 
   border-left: 1px solid rgb(226 225 225);
   border-right: 1px solid rgb(226 225 225);
 }
 
-tr:nth-child(even) td {
+.crazy-table  tr:nth-child(even) td {
   background:#f3f3f3;
 }
 
@@ -96,4 +96,28 @@ input,select,textarea {
   padding: 5px;
   border: 1px solid #dedede;
   border-radius: 2px;
+}
+
+.logo { 
+  color: white;
+}
+
+.button { 
+  padding: 5px;
+    margin-top: 2px;
+    background: #63bb8a;
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.sstable { 
+
+}
+
+.formulaActive {
+  border: 5px solid #ee209f
 }

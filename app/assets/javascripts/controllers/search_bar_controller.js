@@ -7,6 +7,7 @@ setTimeout( function() {
                          
       change(e) {
         if(this.inputTarget.value.length == 0) return 
+        this.listOfFoodsTarget.classList.remove("hidden")
         let self=  this;
         Rails.ajax({
             url: "/search/" + this.inputTarget.value,
