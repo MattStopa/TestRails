@@ -15,6 +15,11 @@
  */
 
 
+body { 
+  font-family: 'Rubik';
+}
+
+
 .tag { 
   padding: 5px;
   background-color: #8ea7af;
@@ -32,3 +37,63 @@
   display: none;
 }
 
+.popup { 
+  position: absolute;
+}
+
+.popup-item { 
+  text-align: center;
+  padding: 5px;
+  background: #f7f7f7;
+  border: 1px solid #c7c7c7;
+  cursor: pointer;
+}
+
+.popup-item:hover { 
+  background: #d8dafc;
+}
+
+table { 
+  width: 100%  ;
+}
+
+th { 
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  --tw-shadow: 0 0 #0000;
+  color: rgba(75,85,99,var(--tw-text-opacity));
+  line-height: 1.5;
+  text-transform: uppercase;
+  background-color: #e5e7eb;
+}
+
+td { 
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  --tw-shadow: 0 0 #0000;
+  color: rgba(75,85,99,var(--tw-text-opacity));
+  line-height: 1.5;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(226 225 225);
+}
+
+tr { 
+  border-left: 1px solid rgb(226 225 225);
+  border-right: 1px solid rgb(226 225 225);
+}
+
+tr:nth-child(even) td {
+  background:#f3f3f3;
+}
+
+input,select,textarea { 
+  padding: 5px;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+}

@@ -4,12 +4,26 @@
     <title>Railsapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="w-full">
+    <div class="bg-gray-100 px-3 py-3 shadow-l ">
+      <div class="container m-auto flex justify-between">
+        <a class="bg-purple-500 inline-block p-3 py-2 text-white rounded" href={baseUrl}>
+          NutrientStats 
+        </a>
+
+        <%= render "components/search" %> 
+
+        
+      </div>
+    </div>
+    <div class="container m-auto">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -20,6 +20,7 @@
 
 
 //= require controllers/hello_controller
+//= require controllers/search_bar_controller
 
 setTimeout( function() {
   window.application = Stimulus.Application.start()

@@ -1,0 +1,15 @@
+<div data-controller="search-bar" class="mt-2">
+    <div style="margin-top: 10px">
+        <div style="width: 400px" class ="relative flex flex-row-reverse">
+            <input type="text" 
+                placeholder="Search Foods"
+                data-target="search-bar.input" 
+                data-action="keyup->search-bar#change focus->search-bar#change blur->search-bar#hide"
+                class="w-48 md:w-full shadow appearance-none border border-gray-400 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                >
+            <div class="absolute p-2 bg-gray-100 mt-10 w-full border border-gray-400 z-10 bg-white " data-target="search-bar.listOfFoods">
+         
+            </div>
+        </div>
+    </div>
+</div>
