@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<table class="crazy-table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Published Status</th>
+      <th>Fact Count</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><img class="w-10" src="<%= food.image_url %>"/></td>
+        <td><%= food.name %></td>
+        <td><%= food.slug %></td>
+        <td><%=
+          (food.published ?
+              '<div class="bg-green-200 inline-block p-2 rounded ">Published</div>'
+            : '<div class="bg-yellow-200 inline-block p-2 rounded ">Unpublished</div>').html_safe %>
+        </td>
+        <td>
+          <div class="stub">
+            <%= food.facts.count %>
+          </div>
+        </td>
+        <td><%= truncate(food.description, length: 100) %></td>
+
+
+
+        <td><%= link_to 'Edit', edit_admin_food_path(food), class: "p-2 px-4 bg-blue-400 hover:bg-blue-500 cursor-pointer text-white rounded" %></td>
+        <td><%= link_to 'Destroy', [:admin, food], method: :delete, data: { confirm: 'Are you sure?' }, class: "p-2 px-4 bg-red-400 hover:bg-red-500 cursor-pointer text-white rounded" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Food', new_admin_food_path %>

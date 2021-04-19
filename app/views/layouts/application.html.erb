@@ -10,11 +10,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="w-full">
-    <div class="bg-gray-100 px-3 py-3 shadow-l ">
-      <div class="container m-auto flex justify-between">
+  <body class="w-full text-sm">
+
+      <div class="app-container container m-auto">
+          <div class="bg-gray-100 px-3 py-3 shadow-l w-full flex justify-between">
         <a class="bg-purple-500 inline-block p-3 py-2 text-white rounded logo" >
-          NutrientStats 
+          NutrientStats(ADMIN)
         </a>
 
         <%= render "components/search" %> 
@@ -22,7 +23,7 @@
         
       </div>
     </div>
-    <div class="container m-auto">
+    <div class="app-container container m-auto">
       <%= yield %>
     </div>
   </body>

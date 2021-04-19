@@ -1,0 +1,286 @@
+[
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60791b0d6986f20015022f97",
+    "name": "Gout",
+    "created_at": "2021-04-16T05:05:17.636Z",
+    "updated_at": "2021-04-16T05:05:17.636Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "607776b3b08c8b0015dd70bb",
+    "name": "Eye-Inflammation",
+    "created_at": "2021-04-14T23:11:47.308Z",
+    "updated_at": "2021-04-15T21:52:42.843Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "607773c2b08c8b0015dd70b9",
+    "name": "Carcinogen-Blocking",
+    "created_at": "2021-04-14T22:59:14.094Z",
+    "updated_at": "2021-04-15T21:39:44.525Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60769283337e9d0015f01833",
+    "name": "Muscle-Soreness",
+    "created_at": "2021-04-14T06:58:11.583Z",
+    "updated_at": "2021-04-15T21:35:40.618Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "6078b0744f2e5400153a7f9c",
+    "name": "Killer-Cells",
+    "created_at": "2021-04-15T21:30:28.371Z",
+    "updated_at": "2021-04-15T21:30:28.371Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "6076e9519b28f4001572bb4b",
+    "name": "Cognitive-Performance",
+    "created_at": "2021-04-14T13:08:33.426Z",
+    "updated_at": "2021-04-15T21:18:15.861Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60762eaca407400015f9610a",
+    "name": "Breast-Cancer",
+    "created_at": "2021-04-13T23:52:12.419Z",
+    "updated_at": "2021-04-14T06:51:12.852Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60763064a407400015f9610b",
+    "name": "Colon-Cancer",
+    "created_at": "2021-04-13T23:59:32.180Z",
+    "updated_at": "2021-04-14T06:51:00.315Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60768d3a337e9d0015f01830",
+    "name": "Cholesterol-Control",
+    "created_at": "2021-04-14T06:35:38.864Z",
+    "updated_at": "2021-04-14T06:49:16.193Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60768d6b337e9d0015f01831",
+    "name": "Diabetes-Control",
+    "created_at": "2021-04-14T06:36:27.895Z",
+    "updated_at": "2021-04-14T06:36:27.895Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "607661145b7d8000153a67bc",
+    "name": "Boosts-Absorption",
+    "created_at": "2021-04-14T03:27:16.643Z",
+    "updated_at": "2021-04-14T04:20:04.904Z",
+    "__v": 0,
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60762e01a407400015f96107",
+    "name": "Carcinoma",
+    "created_at": "2021-04-13T23:49:21.337Z",
+    "updated_at": "2021-04-13T23:49:21.337Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "60762df9a407400015f96106",
+    "name": "",
+    "created_at": "2021-04-13T23:49:13.570Z",
+    "updated_at": "2021-04-13T23:49:13.570Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "6075f913fc26b200157317f6",
+    "name": "Apoptosis",
+    "created_at": "2021-04-13T20:03:31.009Z",
+    "updated_at": "2021-04-13T20:03:31.009Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "6075f883fc26b200157317f5",
+    "name": "Leukemia",
+    "created_at": "2021-04-13T20:01:07.100Z",
+    "updated_at": "2021-04-13T20:01:07.100Z",
+    "__v": 0
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "605bf42a8c042e2f6c632eaa",
+    "name": "Cancer-Fighting",
+    "updated_at": "2021-04-12T23:58:11.617Z",
+    "__v": 1,
+    "created_at": "2021-04-08T04:58:52.623Z",
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "605ca414b54ed5056063894a",
+    "created_at": "2021-03-25T14:54:12.719Z",
+    "updated_at": "2021-04-08T16:44:39.277Z",
+    "__v": 0,
+    "name": "Heart-Health",
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "605ca404b54ed50560638949",
+    "created_at": "2021-03-25T14:53:56.813Z",
+    "updated_at": "2021-04-08T16:44:30.260Z",
+    "__v": 0,
+    "name": "Immune-Boosting",
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "605ca3e0b54ed50560638948",
+    "created_at": "2021-03-25T14:53:20.017Z",
+    "updated_at": "2021-04-08T16:44:20.262Z",
+    "__v": 0,
+    "name": "Anti-Inflammatory",
+    "published": true
+  },
+  {
+    "foods": [
+    ],
+    "facts": [
+    ],
+    "_id": "605ca3c8b54ed50560638947",
+    "created_at": "2021-03-25T14:52:56.510Z",
+    "updated_at": "2021-04-08T16:41:16.243Z",
+    "__v": 0,
+    "name": "Infection-Fighting",
+    "published": true
+  },
+  {
+    "foods": [
+
+    ],
+    "facts": [
+
+    ],
+    "_id": "605ca902b54ed5056063894d",
+    "name": "raptor",
+    "created_at": "2021-03-25T15:15:14.349Z",
+    "updated_at": "2021-03-25T15:15:14.349Z",
+    "__v": 0
+  }
+]

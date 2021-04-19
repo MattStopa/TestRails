@@ -1,4 +1,4 @@
-class FoodsController < ApplicationController
+class Admin::FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
 
   # GET /foods or /foods.json
@@ -46,7 +46,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.update(results)
-        format.html { redirect_to @food, notice: "Food was successfully updated." }
+        format.html { redirect_to [:admin, :foods], notice: "Food was successfully updated." }
         format.json { render :show, status: :ok, location: @food }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -17,12 +17,15 @@
     <% @facts.each do |fact| %>
       <tr>
         <td><%= fact.published %></td>
-        <td><%= fact.links %></td>
+        <td>
+          <div class="stub">
+            <%= fact.links.split("\n").size %>
+          </div>
+        </td>
         <td><%= fact.headline %></td>
         <td><%= fact.summary %></td>
-        <td><%= link_to 'Show', fact %></td>
-        <td><%= link_to 'Edit', edit_fact_path(fact) %></td>
-        <td><%= link_to 'Destroy', fact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_fact_path(fact) %></td>
+        <td><%= link_to 'Destroy', [:admin, fact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Fact', new_fact_path %>
+<%= link_to 'New Fact', new_admin_fact_path %>

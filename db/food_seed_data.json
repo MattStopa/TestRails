@@ -1,0 +1,191 @@
+[
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "607923146986f20015022f9a",
+      "60791ca86986f20015022f98",
+      "6076996d337e9d0015f0183a"
+    ],
+    "_id": "607917596986f20015022f96",
+    "name": "Cherries",
+    "created_at": "2021-04-16T04:49:29.804Z",
+    "updated_at": "2021-04-19T14:56:41.636Z",
+    "__v": 0,
+    "imageUrl": "https://images.pexels.com/photos/1149021/pexels-photo-1149021.jpeg?cs=srgb&dl=pexels-trang-doan-1149021.jpg&fm=jpg",
+    "description": "A cherry is a fruit that grows on a tree or a bush. It belongs to the genus Prunus. It is red in color, with a seed in the middle. It tastes slightly sour, and is often used to flavour cakes and ice cream, or is baked in a pie or cobbler. Cherries are also a good source of Vitamin B.",
+    "slug": "cherries",
+    "published": true
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "6076ebe29b28f4001572bb4c",
+      "6076996c337e9d0015f01839",
+      "60768cd9337e9d0015f0182f"
+    ],
+    "_id": "6076896b337e9d0015f0182c",
+    "name": "Blueberries",
+    "created_at": "2021-04-14T06:19:23.721Z",
+    "updated_at": "2021-04-16T04:53:35.526Z",
+    "__v": 0,
+    "imageUrl": "https://images.pexels.com/photos/1366238/pexels-photo-1366238.jpeg?cs=srgb&dl=pexels-suzy-hazelwood-1366238.jpg&fm=jpg",
+    "slug": "blueberries",
+    "description": "Blueberries are perennial flowering plants with blue or purple berries. They are classified in the section Cyanococcus within the genus Vaccinium. Vaccinium also includes cranberries, bilberries, huckleberries and Madeira blueberries.",
+    "published": true
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "60777827b08c8b0015dd70bc",
+      "60777828b08c8b0015dd70bd"
+    ],
+    "_id": "60777119b08c8b0015dd70b8",
+    "name": "Turmeric",
+    "created_at": "2021-04-14T22:47:53.042Z",
+    "updated_at": "2021-04-16T04:47:46.883Z",
+    "__v": 0,
+    "imageUrl": "https://images.pexels.com/photos/6220708/pexels-photo-6220708.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "description": "Turmeric is a flowering plant, Curcuma longa of the ginger family, Zingiberaceae, the roots of which are used in cooking. Turmeric powder has a warm, bitter, black pepper–like flavor and earthy, mustard-like aroma.",
+    "slug": "turmeric",
+    "published": true
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "60776db7b08c8b0015dd70b7",
+      "607667695b7d8000153a67bf",
+      "60764cf690a89e0015a794ee"
+    ],
+    "_id": "607646ce90a89e0015a794ed",
+    "name": "Avocado",
+    "created_at": "2021-04-14T01:35:10.221Z",
+    "updated_at": "2021-04-14T22:33:27.373Z",
+    "__v": 0,
+    "imageUrl": "https://images.pexels.com/photos/4117606/pexels-photo-4117606.jpeg?cs=srgb&dl=pexels-daria-shevtsova-4117606.jpg&fm=jpg",
+    "slug": "avocado",
+    "description": "The avocado (Persea americana), a tree likely originating from southcentral Mexico, is classified as a member of the flowering plant family Lauraceae. The fruit of the plant, also called an avocado (or avocado pear or alligator pear), is botanically a large berry containing a single large seed. Avocado trees are partially self-pollinating, and are often propagated through grafting to maintain predictable fruit quality and quantity.",
+    "published": true
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "605a0a0ed1d63c7fb083fd4e",
+      "605a0a0ed1d63c7fb083fd4d",
+      "605a091ad1d63c7fb083fd44",
+      "605a091ad1d63c7fb083fd43"
+    ],
+    "_id": "60582ccdf227e75894309fd7",
+    "name": "Garlic",
+    "__v": 0,
+    "imageUrl": "https://nutrient-facts.s3.amazonaws.com/garlic.jpg",
+    "slug": "garlic",
+    "updated_at": "2021-04-14T05:43:17.173Z",
+    "published": true,
+    "description": "Garlic (Allium sativum) is a species in the onion genus, Allium. Its close relatives include the onion, shallot, leek, chive, Welsh onion and Chinese onion. It is native to Central Asia and northeastern Iran and has long been a common seasoning worldwide, with a history of several thousand years of human consumption and use. It was known to ancient Egyptians and has been used as both a food flavoring and a traditional medicine. China produces some 80% of the world's supply of garlic."
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "607630eaa407400015f9610d",
+      "60762e7da407400015f96109",
+      "6075f959fc26b200157317f7"
+    ],
+    "_id": "6074f683aaaf1300151c28d9",
+    "name": "Sweet Potato",
+    "created_at": "2021-04-13T01:40:19.463Z",
+    "updated_at": "2021-04-14T00:01:47.144Z",
+    "__v": 0,
+    "description": "The sweet potato or sweetpotato (Ipomoea batatas) is a dicotyledonous plant that belongs to the bindweed or morning glory family, Convolvulaceae. Its large, starchy, sweet-tasting, tuberous roots are a root vegetable. The young shoots and leaves are sometimes eaten as greens. The sweet potato is distantly related to the common potato (Solanum tuberosum), both being in the order Solanales. The sweet potato, especially the orange variety, is often called a \"yam\" in parts of North America, but it is entirely unrelated to true yams.",
+    "imageUrl": "https://nutrient-facts.s3.amazonaws.com/sweet-potato.jpeg",
+    "slug": "sweet-potato",
+    "published": true
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "6061e87a71c92659b0c31eca",
+      "6061e2b371c92659b0c31ec9",
+      "6061dfcb71c92659b0c31ec8"
+    ],
+    "_id": "60583302e03f3618a071e7dd",
+    "name": "Mushrooms",
+    "__v": 0,
+    "imageUrl": "https://nutrient-facts.s3.amazonaws.com/mushrooms.jpg",
+    "published": true,
+    "slug": "mushrooms",
+    "updated_at": "2021-04-13T23:52:14.170Z"
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "60609cbd71c92659b0c31ec5",
+      "605a091ad1d63c7fb083fd43"
+    ],
+    "_id": "60582ccef227e75894309fdc",
+    "name": "Lemons ",
+    "__v": 0,
+    "imageUrl": "https://nutrient-facts.s3.amazonaws.com/lemons.jpg",
+    "slug": "lemons",
+    "published": true,
+    "updated_at": "2021-04-13T01:05:49.159Z"
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "605a091ad1d63c7fb083fd43"
+    ],
+    "_id": "60582cd1f227e75894309fe1",
+    "name": "Grapes",
+    "__v": 0,
+    "imageUrl": "https://i5.walmartimages.com/asr/f153fc6d-a54a-413f-9892-07f5e92dcac2_2.f4d588da9e89dae25e9eb33157c96e27.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    "slug": "grapes",
+    "updated_at": "2021-04-12T23:56:47.556Z",
+    "published": true
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+      "6061ea7b71c92659b0c31ecb"
+    ],
+    "_id": "605cab6eb54ed5056063894e",
+    "name": "Nutritional Yeast",
+    "slug": "nutritional-yeast",
+    "created_at": "2021-03-25T15:25:34.551Z",
+    "updated_at": "2021-03-29T14:55:55.080Z",
+    "__v": 0,
+    "imageUrl": "https://sc04.alicdn.com/kf/He8509f3664ee485a93084bac38b1b8f8W.png"
+  },
+  {
+    "vitAndMin": [
+
+    ],
+    "allFacts": [
+
+    ],
+    "_id": "6058445e19ce666b50cc7a6e",
+    "name": "Garlic",
+    "__v": 0,
+    "published": false,
+    "updated_at": "2021-03-24T08:22:55.962Z"
+  }
+]

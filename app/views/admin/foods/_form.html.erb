@@ -1,0 +1,141 @@
+<div class=" bg-gray-100 shadow-lg rounded-sm text-sm text-black mt-4 ">
+  <div class="font-medium justify-between border-b-2 border-gray-200 p-3">
+    <div class="flex justify-between"><div class="headline">Edit Nutrient</div>
+    <div class="bg-green-500 px-3 py-1 rounded hover:bg-green-600 cursor-pointer text-white">Save</div>
+  </div>
+</div>
+
+<div class="p-4">
+    <%= form_with(model: [:admin, food], local: true) do |form| %>
+      <% if food.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+          <ul>
+          <% food.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field flex">
+        <%= form.label :published %>
+        <%= form.check_box :published %>
+      </div>
+
+     <div class="field">
+        <%= form.label :food_name %>
+        <%= form.text_field :name, class: "shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :slug %>
+        <%= form.text_field :slug, class: "shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description, class: "mt-1 h-20 shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 mb-3  pl-2 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :image_url %>
+        <%= form.text_field :image_url, class: "shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+
+
+
+      <div class="field">
+        <%= form.label :tags %>
+
+        <div data-controller="tag-picker">
+
+
+          <div class="flex">
+            <input type="text"  data-action="focus->tag-picker#show" class="mr-2">
+            <div style="" data-target="tag-picker.existingTags" class="flex">
+              <% food.tags.each do |item|  %>
+                <div class=" p-2 px-3 h-6 l-height-0 pt-1 bg-purple-500 text-white rounded mr-2 cursor-pointer" data-action="click->tag-picker#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
+              <% end %>
+            </div>
+          </div>
+
+
+
+          <div class=" hidden w-40 absolute bg-white border p-2" data-target="tag-picker.dropdown">
+            <% Tag.all.each do |item| %>
+              <div class="bg-purple-500 mt-1 p-2 px-3 h-6 l-height-0 pt-1 bg-purple-500 text-white rounded mr-2 cursor-pointer <%= food.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> "
+                    data-action="click->tag-picker#addItem" data-info="<%= item.id %>" >
+                <%= item.name %>
+              </div>
+            <% end %>
+          </div>
+
+          <input
+            class="mt-1 h-20 shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 mb-3  pl-2 leading-tight focus:outline-none focus:shadow-outline"
+            data-target="tag-picker.finalValue"
+            name="food[tags]"
+            type="hidden"
+            value="<%= food.tags.map(&:id).join(",") %>"
+          >
+      </div>
+
+      <div class="font-medium justify-between border-b-2 border-gray-200 p-3"></div>
+      <div class="field"  data-controller="fact-adder">
+        <div class="flex justify-between">
+          <div class="text-base mt-3"> Existing facts</div>
+
+          <div class="button" data-target="fact-adder.toggleButton" data-action="click->fact-adder#showAddFact">Add Fact</div>
+        </div>
+
+        <div data-target="fact-adder.popup" class="hidden w-full absolute food-picker right-0" >
+          <table class="crazy-table w-full >
+            <tr>
+              <th>Actions</th>
+              <th>Headline</th>
+              <th>Created at</th>
+            </tr>
+              <tbody  data-target="fact-adder.newTags">
+                <% Fact.where.not(id: food.facts.map(&:id)).each do |fact| %>
+
+                    <tr data-id="<%= fact.id %>">
+                      <td><div class="button" data-action="click->fact-adder#add">Add</div></td>
+                      <td><%= fact.headline %></td>
+                      <td><%= fact.created_at %></td>
+                    </tr>
+
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+
+
+        <table class="crazy-table w-full">
+          <tr>
+            <th>Actions</th>
+            <th>Headline</th>
+            <th>Created at</th>
+          </tr>
+          <tbody data-target="fact-adder.existingTags">
+            <% food.facts.each do |fact| %>
+              <tr data-id="<%= fact.id %>" >
+                <td><div class="button" data-action="click->fact-adder#remove">remove</div></td>
+                <td><%= fact.headline %></td>
+                <td><%= fact.created_at %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+
+        <input data-target="fact-adder.finalValue" name="food[facts]" type="hidden" value="<%= food.facts.map(&:id).join(",") %>">
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+  </div>

@@ -1,4 +1,4 @@
-<%= form_with(model: fact, local: true) do |form| %>
+<%= form_with(model: [:admin, fact], local: true) do |form| %>
   <% if fact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(fact.errors.count, "error") %> prohibited this fact from being saved:</h2>

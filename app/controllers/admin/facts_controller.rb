@@ -1,4 +1,4 @@
-class FactsController < ApplicationController
+class Admin::FactsController < ApplicationController
   before_action :set_fact, only: %i[ show edit update destroy ]
 
   # GET /facts or /facts.json
@@ -44,7 +44,7 @@ class FactsController < ApplicationController
 
     respond_to do |format|
       if @fact.update(results)
-        format.html { redirect_to @fact, notice: "Fact was successfully updated." }
+        format.html { redirect_to [:admin, :facts], notice: "Fact was successfully updated." }
         format.json { render :show, status: :ok, location: @fact }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class FactsController < ApplicationController
   def destroy
     @fact.destroy
     respond_to do |format|
-      format.html { redirect_to facts_url, notice: "Fact was successfully destroyed." }
+      format.html { redirect_to admin_facts_url, notice: "Fact was successfully destroyed." }
       format.json { head :no_content }
     end
   end
