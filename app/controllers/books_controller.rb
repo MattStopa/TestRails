@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   def create
     results = book_params.to_h
     results["tags"] = Tag.where(id: [results["tags"].split(",")])
+
     @book = Book.new(results)
 
     respond_to do |format|

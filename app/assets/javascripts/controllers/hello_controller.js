@@ -2,23 +2,28 @@ setTimeout( function() {
   
 
   console.log(window.application)
-  application.register("hello", class extends Stimulus.Controller {
+  application.register("tag-picker", class extends Stimulus.Controller {
     static get targets() { return [ "finalValue", "dropdown", "existingTags" ]}
-                       
+
+    saveCurrentState() {
+      let newArray = []
+      for(let child of this.existingTagsTarget.children) {
+        newArray.push(child.getAttribute('data-info'))
+      }
+
+      this.finalValueTarget.value = newArray
+    }
+
     addItem(e) {
       let info = e.target.getAttribute('data-info')
       // this.stupidTarget.innerHTML = "ljkasdfkjlfs"
 
       var cln = e.target.cloneNode(true);
-      cln.setAttribute("data-action", "click->hello#removeItem")
+      cln.setAttribute("data-action", "click->tag-picker#removeItem")
       e.target.classList.toggle('hidden')
       this.existingTagsTarget.append(cln)
       let newArray = []
-      for(let child of this.existingTagsTarget.children) {
-        newArray.push(child.getAttribute('data-info'))
-      }
-      
-      this.finalValueTarget.value = newArray
+      this.saveCurrentState()
     }
 
     removeItem(e) { 
@@ -29,6 +34,8 @@ setTimeout( function() {
       }
       console.log(items)
       e.target.remove()
+      this.saveCurrentState()
+
     }
 
     show(e) {

@@ -31,6 +31,31 @@
     <%= form.text_area :summary %>
   </div>
 
+  <div class="tags">
+    <%= form.label :tags %>
+
+    <div data-controller="tag-picker">
+      <div class="flex">
+        <input type="text"  data-action="focus->tag-picker#show" >
+        <div style="" data-target="tag-picker.existingTags" class="flex">
+          <% fact.tags.each do |item|  %>
+            <div class="tag" data-action="click->tag-picker#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class=" hidden" data-target="tag-picker.dropdown">
+        <% Tag.all.each do |item| %>
+          <div class="tag <%= fact.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> "
+                data-action="click->tag-picker#addItem" data-info="<%= item.id %>" >
+            <%= item.name %>
+          </div>
+        <% end %>
+      <input data-target="tag-picker.finalValue" name="fact[tags]" type="hidden" value="<%= fact.tags.map(&:id).join(",") %>">
+    </div>
+
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

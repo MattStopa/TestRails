@@ -9,6 +9,4 @@ class Tag < ApplicationRecord
     has_many :facts, through: :tag_fact_glues
 
     validates :tag_type, inclusion: %w[tag vitamin mineral]
-
-
 end

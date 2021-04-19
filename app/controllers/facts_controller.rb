@@ -21,7 +21,10 @@ class FactsController < ApplicationController
 
   # POST /facts or /facts.json
   def create
-    @fact = Fact.new(fact_params)
+    results = fact_params.to_h
+    results["tags"] = Tag.where(id: [results["tags"].split(",")])
+
+    @fact = Fact.new(results)
 
     respond_to do |format|
       if @fact.save
@@ -36,8 +39,11 @@ class FactsController < ApplicationController
 
   # PATCH/PUT /facts/1 or /facts/1.json
   def update
+    results = fact_params.to_h
+    results["tags"] = Tag.where(id: [results["tags"].split(",")])
+
     respond_to do |format|
-      if @fact.update(fact_params)
+      if @fact.update(results)
         format.html { redirect_to @fact, notice: "Fact was successfully updated." }
         format.json { render :show, status: :ok, location: @fact }
       else
@@ -64,6 +70,6 @@ class FactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fact_params
-      params.require(:fact).permit(:published, :links, :headline, :summary)
+      params.require(:fact).permit(:published, :links, :headline, :summary, :tags)
     end
 end

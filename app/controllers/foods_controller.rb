@@ -21,7 +21,11 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params)
+    results = food_params.to_h
+    results["tags"] = Tag.where(id: [results["tags"].split(",")])
+    results["facts"] = Fact.where(id: [results["facts"].split(",")])
+
+    @food = Food.new(results)
 
     respond_to do |format|
       if @food.save
@@ -36,8 +40,12 @@ class FoodsController < ApplicationController
 
   # PATCH/PUT /foods/1 or /foods/1.json
   def update
+    results = food_params.to_h
+    results["tags"] = Tag.where(id: [results["tags"].split(",")])
+    results["facts"] = Fact.where(id: [results["facts"].split(",")])
+
     respond_to do |format|
-      if @food.update(food_params)
+      if @food.update(results)
         format.html { redirect_to @food, notice: "Food was successfully updated." }
         format.json { render :show, status: :ok, location: @food }
       else
@@ -64,6 +72,6 @@ class FoodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def food_params
-      params.require(:food).permit(:published, :description, :name, :image_url, :slug)
+      params.require(:food).permit(:published, :description, :name, :image_url, :slug, :tags, :facts)
     end
 end
