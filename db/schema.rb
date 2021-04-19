@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_030042) do
+ActiveRecord::Schema.define(version: 2021_04_19_010404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,48 @@ ActiveRecord::Schema.define(version: 2021_04_18_030042) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "facts", force: :cascade do |t|
+    t.boolean "published"
+    t.text "links"
+    t.string "headline"
+    t.text "summary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "food_facts", force: :cascade do |t|
+    t.bigint "fact_id"
+    t.bigint "food_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fact_id"], name: "index_food_facts_on_fact_id"
+    t.index ["food_id"], name: "index_food_facts_on_food_id"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.boolean "published"
+    t.text "description"
+    t.string "name"
+    t.text "image_url"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "high_scores", force: :cascade do |t|
     t.string "game"
     t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tag_fact_glues", force: :cascade do |t|
+    t.bigint "fact_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fact_id"], name: "index_tag_fact_glues_on_fact_id"
+    t.index ["tag_id"], name: "index_tag_fact_glues_on_tag_id"
   end
 
   create_table "tag_foods", force: :cascade do |t|
@@ -50,6 +87,17 @@ ActiveRecord::Schema.define(version: 2021_04_18_030042) do
     t.index ["tag_id"], name: "index_tag_foods_on_tag_id"
   end
 
+  create_table "tag_glues", force: :cascade do |t|
+    t.bigint "fact_id"
+    t.bigint "food_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fact_id"], name: "index_tag_glues_on_fact_id"
+    t.index ["food_id"], name: "index_tag_glues_on_food_id"
+    t.index ["tag_id"], name: "index_tag_glues_on_tag_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.string "tag_type"
@@ -59,6 +107,13 @@ ActiveRecord::Schema.define(version: 2021_04_18_030042) do
 
   add_foreign_key "appointments", "books"
   add_foreign_key "appointments", "tags"
+  add_foreign_key "food_facts", "facts"
+  add_foreign_key "food_facts", "foods"
+  add_foreign_key "tag_fact_glues", "facts"
+  add_foreign_key "tag_fact_glues", "tags"
   add_foreign_key "tag_foods", "books"
   add_foreign_key "tag_foods", "tags"
+  add_foreign_key "tag_glues", "facts"
+  add_foreign_key "tag_glues", "foods"
+  add_foreign_key "tag_glues", "tags"
 end

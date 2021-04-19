@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facts: one
+  foods: one
+  tags: one
+
+two:
+  facts: two
+  foods: two
+  tags: two

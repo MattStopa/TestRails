@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @fact.published %>
+</p>
+
+<p>
+  <strong>Links:</strong>
+  <%= @fact.links %>
+</p>
+
+<p>
+  <strong>Headline:</strong>
+  <%= @fact.headline %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @fact.summary %>
+</p>
+
+<%= link_to 'Edit', edit_fact_path(@fact) %> |
+<%= link_to 'Back', facts_path %>

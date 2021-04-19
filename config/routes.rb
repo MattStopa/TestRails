@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :facts
+  resources :foods
   resources :tags
   resources :books
 
