@@ -143,3 +143,9 @@ input,select,textarea {
   color: #fff;
 }
 
+.food-title {
+    padding-left: 11px;
+  padding-right: 17px;
+  color: #01a015;
+  border-left: 3px solid #01a015;
+}

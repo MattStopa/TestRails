@@ -3,12 +3,28 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="187c5b95-8939-42d1-b70b-1ef0b8b3c991" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/books_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/books_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/facts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/facts_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/tag.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tag.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/facts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/facts/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +55,25 @@
       <option name="presentableId" value="Default" />
       <updated>1618790590434</updated>
       <workItem from="1618790591884" duration="5240000" />
+      <workItem from="1618842362651" duration="24973000" />
+      <workItem from="1618935259714" duration="96000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1143" y="575" key="#Other_File_Types" timestamp="1618796402563">
@@ -54,13 +84,17 @@
       <screen x="62" y="0" width="2498" height="1440" />
     </state>
     <state x="765" y="375" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2498.0.2498.1440/62.0.2498.1440@62.0.2498.1440" timestamp="1618795711504" />
-    <state x="394" y="456" width="585" height="534" key="find.popup" timestamp="1618796010464">
+    <state x="394" y="456" width="585" height="558" key="find.popup" timestamp="1618901580683">
       <screen x="62" y="0" width="2498" height="1440" />
     </state>
-    <state x="394" y="456" width="585" height="534" key="find.popup/-2498.0.2498.1440/62.0.2498.1440@62.0.2498.1440" timestamp="1618796010464" />
-    <state x="349" y="330" width="672" height="678" key="search.everywhere.popup" timestamp="1618796272647">
+    <state x="394" y="456" width="585" height="558" key="find.popup/-2498.0.2498.1440/62.0.2498.1440@62.0.2498.1440" timestamp="1618901580683" />
+    <state x="967" y="340" key="run.anything.popup" timestamp="1618901263511">
       <screen x="62" y="0" width="2498" height="1440" />
     </state>
-    <state x="349" y="330" width="672" height="678" key="search.everywhere.popup/-2498.0.2498.1440/62.0.2498.1440@62.0.2498.1440" timestamp="1618796272647" />
+    <state x="967" y="340" key="run.anything.popup/-2498.0.2498.1440/62.0.2498.1440@62.0.2498.1440" timestamp="1618901263511" />
+    <state x="349" y="330" width="672" height="678" key="search.everywhere.popup" timestamp="1618935122952">
+      <screen x="62" y="0" width="2498" height="1440" />
+    </state>
+    <state x="349" y="330" width="672" height="678" key="search.everywhere.popup/-2498.0.2498.1440/62.0.2498.1440@62.0.2498.1440" timestamp="1618935122952" />
   </component>
 </project>

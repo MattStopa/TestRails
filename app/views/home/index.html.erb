@@ -8,8 +8,8 @@
 
       <div class="">
         <div>
-          <% Fact.all.order(created_at: :desc).limit(10).reject { |i| !i.foods || i.foods.length == 0 }.each do |fact| %>
-            <%= render 'fact_display', {fact: fact} %>
+          <% Fact.includes([:foods, :food_facts]).left_outer_joins(:foods).where.not( foods: { id: nil }).order(created_at: :desc).limit(10).each do |fact| %>
+            <%= render 'fact_display', { fact: fact } %>
 
           <% end %>
         </div>
