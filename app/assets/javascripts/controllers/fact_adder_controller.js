@@ -26,7 +26,8 @@ setTimeout( function() {
       console.log(e.target.parentElement.parentElement)
       e.target.setAttribute("data-action","click->fact-adder#add")
       e.target.innerHTML = "Add"
-      this.newTagsTarget.append(e.target.parentElement.parentElement)
+      console.log()
+      document.querySelectorAll("#newTags")[0].append(e.target.parentElement.parentElement)
       this.saveDataToHidden()
     }
 

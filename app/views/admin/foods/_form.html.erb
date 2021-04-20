@@ -54,20 +54,22 @@
 
 
           <div class="flex">
-            <input type="text"  data-action="focus->tag-picker#show" class="mr-2">
+            <input type="text" data-action="keyup->tag-picker#keyup focus->tag-picker#show blur->tag-picker#show" class="mr-2">
             <div style="" data-target="tag-picker.existingTags" class="flex">
               <% food.tags.each do |item|  %>
-                <div class=" p-2 px-3 h-6 l-height-0 pt-1 bg-purple-500 text-white rounded mr-2 cursor-pointer" data-action="click->tag-picker#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
+                <div data-value="<%= item.name %>" class=" p-2 px-3 h-6 l-height-0 pt-1 bg-yellow-500 text-white rounded mr-2 cursor-pointer" data-action="click->tag-picker#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
               <% end %>
             </div>
           </div>
 
 
 
-          <div class=" hidden w-40 absolute bg-white border p-2" data-target="tag-picker.dropdown">
-            <% Tag.all.each do |item| %>
-              <div class="bg-purple-500 mt-1 p-2 px-3 h-6 l-height-0 pt-1 bg-purple-500 text-white rounded mr-2 cursor-pointer <%= food.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> "
-                    data-action="click->tag-picker#addItem" data-info="<%= item.id %>" >
+          <div class=" hidden w-40 absolute bg-white border p-2" data-target="tag-picker.dropdown" style="height: 500px; overflow-y: scroll">
+            <% Tag.where(tag_type: ['mineral', 'vitamin']).each do |item| %>
+              <div
+               data-value="<%= item.name %>"
+               class="bg-yellow-500 mt-1 p-2 px-3 l-height-0 pt-1 bg-orange-500 text-white rounded mr-2 cursor-pointer <%= food.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> "
+               data-action="click->tag-picker#addItem" data-info="<%= item.id %>" >
                 <%= item.name %>
               </div>
             <% end %>
@@ -97,12 +99,12 @@
               <th>Headline</th>
               <th>Created at</th>
             </tr>
-              <tbody  data-target="fact-adder.newTags">
+              <tbody data-target="fact-adder.newTags" id="newTags">
                 <% Fact.where.not(id: food.facts.map(&:id)).each do |fact| %>
 
                     <tr data-id="<%= fact.id %>">
                       <td><div class="button" data-action="click->fact-adder#add">Add</div></td>
-                      <td><%= fact.headline %></td>
+                      <td><a href="/admin/"><%= fact.headline %></td>
                       <td><%= fact.created_at %></td>
                     </tr>
 
@@ -122,7 +124,7 @@
             <% food.facts.each do |fact| %>
               <tr data-id="<%= fact.id %>" >
                 <td><div class="button" data-action="click->fact-adder#remove">remove</div></td>
-                <td><%= fact.headline %></td>
+                <td><%= link_to fact.headline , edit_admin_fact_path(fact), class: "underline" %></td>
                 <td><%= fact.created_at %></td>
               </tr>
             <% end %>

@@ -39,11 +39,28 @@ setTimeout( function() {
     }
 
     show(e) {
-      console.log(this.dropdownTarget.classList.toggle('hidden'))
+      setTimeout( () => {
+        this.dropdownTarget.classList.toggle('hidden')
+      }, 100)
+    }
+
+    keyup(e) {
+
+      let items = this.dropdownTarget.querySelectorAll("div")
+      for(let item of items) {
+
+        if(e.target.value.length===0) {
+          item.classList.remove('hidden')
+        }
+        else if(item.getAttribute('data-value').search(new RegExp(e.target.value, "i")) < 0) {
+          item.classList.add('hidden')
+        }
+      }
     }
 
     get name() {
       return this.nameTarget.value
     }
+
   })
 }, 500)  

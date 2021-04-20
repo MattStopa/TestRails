@@ -35,24 +35,38 @@
     <%= form.label :tags %>
 
     <div data-controller="tag-picker">
+
+
       <div class="flex">
-        <input type="text"  data-action="focus->tag-picker#show" >
+        <input type="text"  data-action="keyup->tag-picker#keyup focus->tag-picker#show blur->tag-picker#show" class="mr-2">
         <div style="" data-target="tag-picker.existingTags" class="flex">
           <% fact.tags.each do |item|  %>
-            <div class="tag" data-action="click->tag-picker#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
+            <div data-value="<%= item.name %>" class=" p-2 px-3 h-6 l-height-0 pt-1 bg-purple-500 text-white rounded mr-2 cursor-pointer" data-action="click->tag-picker#removeItem"data-info="<%= item.id %>"> <%= item.name %> </div>
           <% end %>
         </div>
       </div>
 
-      <div class=" hidden" data-target="tag-picker.dropdown">
-        <% Tag.all.each do |item| %>
-          <div class="tag <%= fact.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> "
+
+
+      <div class=" hidden w-40 absolute bg-white border p-2" data-target="tag-picker.dropdown" style="height: 500px; overflow-y: scroll">
+        <% Tag.where.not(tag_type: ['mineral', 'vitamin']).each do |item| %>
+          <div
+            data-value="<%= item.name %>"
+            class="bg-purple-500 hover:bg-purple-600 mt-1 p-2 px-3 l-height-0 pt-1 bg-orange-500 text-white rounded mr-2 cursor-pointer <%= fact.tags.map(&:name).include?(item.name) ? 'hidden' : ''%> "
                 data-action="click->tag-picker#addItem" data-info="<%= item.id %>" >
             <%= item.name %>
           </div>
         <% end %>
-      <input data-target="tag-picker.finalValue" name="fact[tags]" type="hidden" value="<%= fact.tags.map(&:id).join(",") %>">
-    </div>
+      </div>
+
+      <input
+
+        data-target="tag-picker.finalValue"
+        name="fact[tags]"
+        type="hidden"
+        value="<%= fact.tags.map(&:id).join(",") %>"
+      >
+  </div>
 
   </div>
 

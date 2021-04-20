@@ -35,7 +35,7 @@ body {
 }
 
 .hidden { 
-  display: none;
+  /*display: none;*/
 }
 
 .popup { 
@@ -142,3 +142,4 @@ input,select,textarea {
   line-height: 11px;
   color: #fff;
 }
+
