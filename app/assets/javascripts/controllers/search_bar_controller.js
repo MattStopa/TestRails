@@ -6,6 +6,7 @@ setTimeout( function() {
       static get targets() { return [ "listOfFoods", "input" ]}
                          
       change(e) {
+        console.log("GOT HERE")
         this.listOfFoodsTarget.classList.remove("hidden")
         if(this.inputTarget.value.length == 0) return
 
@@ -16,18 +17,19 @@ setTimeout( function() {
             data: "",
             success: function(data) {
               self.listOfFoodsTarget.innerHTML = ""
-              for(let child of data.children[0].children[1].children) { 
-                  self.listOfFoodsTarget.append(child)
-              }
-
+              self.listOfFoodsTarget.append(data.children[0].children[1].children[0])
             },
             error: function(data) {}
           })
 
       }
 
-      hide() { 
-        this.listOfFoodsTarget.classList.add("hidden")
+      hide() {
+        let self = this
+        setTimeout( function() {
+          self.listOfFoodsTarget.classList.add("hidden")
+        }, 100)
+
       }
   
     })
