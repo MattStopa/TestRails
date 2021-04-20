@@ -1,0 +1,16 @@
+<div class="md:flex">
+  <%= render "sidebar" %>
+  <div class="w-full">
+    <div class="p-4 inline-block mt-2 bg-yellow-500 text-white py-1 rounded ml-4 mt-3 text-xl"><%= @name %></div>
+    <% @facts.each do |fact|  %>
+      <%= render 'fact_display', {fact: fact} %>
+    <% end %>
+
+    <% if(!@facts || @facts.length == 0) %>
+      <div class="w-full mt-3 ml-4 text-lg">
+        There doesn't seem to be any thing here right now
+      </div>
+    <% end %>
+    </div>
+  <%= render 'right_sidebar'%>
+</div>

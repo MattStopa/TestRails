@@ -1,0 +1,12 @@
+ <div class="hidden md:inline-block bg-gray-100 px-3 py-3 mt-5 ml-1 mr-0 shadow-lg rounded w-32">
+    Tags
+    <div>
+      <% Tag.where.not(tag_type: ['mineral', 'vitamin']).order(name: :asc).each do |tag| %>
+        <a href="/tags/<%= tag.name %>"
+           class="text-sm pl-2 pr-2 py-1 bg-purple-500 text-purple-100 inline-block  rounded mt-2 tag-top cursor-pointer hover:bg-purple-800 text-center mr-2 w-full">
+           <%= tag.name %>
+         </a>
+
+      <% end %>
+     </div>
+  </div>

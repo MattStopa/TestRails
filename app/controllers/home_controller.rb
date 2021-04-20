@@ -4,7 +4,12 @@ class HomeController < ApplicationController
   end
 
   def home_params
-    params.permit(:slug)
+    params.permit(:slug, :name)
+  end
+
+  def tags
+    @name = home_params['name']
+    @facts = Tag.where(name: @name).first.facts
   end
 
 end

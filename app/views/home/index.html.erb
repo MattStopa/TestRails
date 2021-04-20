@@ -9,53 +9,12 @@
       <div class="">
         <div>
           <% Fact.all.order(created_at: :desc).limit(10).reject { |i| !i.foods || i.foods.length == 0 }.each do |fact| %>
+            <%= render 'fact_display', {fact: fact} %>
 
-            <div class="bg-white px-3 py-3 m-5 mt-3 mb-3 ml-4 shadow-lg rounded flex">
-              <div class="flex w-full">
-
-                <img class="hidden md:inline-block w-20 h-20 md:w-40 md:h-40 rounded mr-3" src="<%= fact.foods.first.image_url %>">
-                <div class="w-full">
-                  <div class="flex -mt-1 w-full">
-                    <div class="flex w-full">
-                      <img class="md:hidden w-20 h-20 md:w-40 md:h-40 rounded mr-3" src="<%= fact.foods.first.image_url %>">
-                      <div class="w-full">
-                        <div class=" text-4xl flex grid w-full">
-                          <div class="flex justify-between w-full">
-                            <a class="food-name-link hover:underline" href="/nutrient/<%= fact.foods.first.slug %>"><%= fact.foods.first.name %></a>
-                            <div class="hidden md:inline-block bg-gray-700 text-white rounded h-6 px-2 pt-1">
-                              <div class="text-sm "><%= time_ago_in_words(fact.created_at) %></div>
-                            </div>
-                          </div>
-                          <a class="md:hidden text-xl  pl-3 mt-1  food-title hover:underline" href="/nutrient/<%= fact.foods.first.slug %>?fact=<%= fact.id %>"><%= fact.headline %></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=""></div>
-                  </div>
-                  <a class="hidden md:inline-block text-xl  mt-1 food-title hover:underline" href="/nutrient/<%= fact.foods.first.slug %>?fact=<%= fact.id %>"><%= fact.headline %></a>
-                  <div class=" mt-2 text-blue-500 p-200 p-2 border lh-12 mr-2">
-                    <%= fact.summary %>
-                  </div>
-                </div>
-              </div>
-              <div></div>
-              <div class="flex headline-holder"></div>
-            </div>
           <% end %>
         </div>
       </div>
     </div>
+    <%= render 'right_sidebar'%>
 
-  <div class="hidden md:inline-block bg-gray-100 px-3 py-3 mt-5 ml-1 mr-0 shadow-lg rounded w-32">
-    Tags
-    <div>
-      <% Tag.where.not(tag_type: ['mineral', 'vitamin']).order(name: :asc).each do |tag| %>
-        <a href="/tags/<%= tag.name %>"
-           class="text-sm pl-2 pr-2 py-1 bg-purple-500 text-purple-100 inline-block  rounded mt-2 tag-top cursor-pointer hover:bg-purple-800 text-center mr-2 w-full">
-           <%= tag.name %>
-         </a>
-
-      <% end %>
-     </div>
-  </div>
 </div>
