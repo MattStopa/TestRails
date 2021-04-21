@@ -28,7 +28,7 @@ def run_me
 bucket_name = 'nutrient-facts'
 object_key = 'my-file.txt'
 region = 'us-east-1'
-creds = Aws::Credentials.new("AKIAZXUC657LWYRFIJXO", "g8vuQObxxZeUmjupmB+nhyM/3ANGbYuphI5nOMdd")
+creds = Aws::Credentials.new('api')
 s3_client = Aws::S3::Client.new(region: region, credentials: creds)
 
 s3 = Aws::S3::Resource.new(
