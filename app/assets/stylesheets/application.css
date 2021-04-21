@@ -169,3 +169,25 @@ input,select,textarea {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.no-show {
+  height: 0px;
+  padding: 0px;
+  overflow: hidden;
+  border: 0px;
+}
+
+.wiki {
+  background: #fff;
+  border: 1px solid #e6dada;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+}
+
+@media (min-width: 768px) {
+  .search-box {
+      width: 400px;
+  }
+}

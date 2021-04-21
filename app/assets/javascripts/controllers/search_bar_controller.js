@@ -4,10 +4,18 @@ setTimeout( function() {
     console.log(window.application)
     application.register("search-bar", class extends Stimulus.Controller {
       static get targets() { return [ "listOfFoods", "input" ]}
-                         
+                 
+      initialize() {
+      }
+
       change(e) {
-        console.log("GOT HERE")
-        this.listOfFoodsTarget.classList.remove("hidden")
+
+        this.listOfFoodsTarget.classList.remove("no-show")
+
+        // for(let food of this.listOfFoodsTarget.querySelectorAll('.image-link')) { 
+        //   food.setAttribute('src', food.getAttribute('data-src'))
+        // }
+
         if(this.inputTarget.value.length == 0) return
 
         let self=  this;
@@ -27,7 +35,7 @@ setTimeout( function() {
       hide() {
         let self = this
         setTimeout( function() {
-          self.listOfFoodsTarget.classList.add("hidden")
+           self.listOfFoodsTarget.classList.add("no-show")
         }, 100)
 
       }

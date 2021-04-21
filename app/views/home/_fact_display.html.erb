@@ -1,31 +1,33 @@
-<div class="bg-white px-3 py-3 m-2 md:m-5 mt-3 mb-3 shadow-lg rounded flex">
-  <div class="flex w-full">
+<% if(fact.foods && fact.foods.length > 0) %>
+  <div class="bg-white px-3 py-3 m-2 md:m-5 mt-3 mb-3 shadow-lg rounded flex">
+    <div class="flex w-full">
 
-    <img class="hidden md:inline-block w-20 h-20 md:w-40 md:h-40 rounded mr-3" src="<%= fact.foods.first.image_url %>">
-    <div class="w-full">
-      <div class="flex -mt-1 w-full">
-        <div class="flex w-full">
-          <img class="md:hidden w-20 h-20 md:w-40 md:h-40 rounded mr-3" src="<%= fact.foods.first.image_url %>">
-          <div class="w-full">
-            <div class=" text-4xl grid w-full">
-              <div class="flex justify-between w-full">
-                <a class="food-name-link hover:underline" href="/nutrient/<%= fact.foods.first.slug %>"><%= fact.foods.first.name %></a>
-                <div class="hidden md:inline-block bg-gray-700 text-white rounded h-6 px-2 pt-1">
-                  <div class="text-sm "><%= time_ago_in_words(fact.created_at) %></div>
+        <img class="hidden md:inline-block w-20 h-20 md:w-40 md:h-40 rounded mr-3" src="<%= fact.foods.first.image_url %>">
+        <div class="w-full">
+          <div class="flex -mt-1 w-full">
+            <div class="flex w-full">
+              <img class="md:hidden w-20 h-20 md:w-40 md:h-40 rounded mr-3" src="<%= fact.foods.first.image_url %>">
+              <div class="w-full">
+                <div class=" text-4xl grid w-full">
+                  <div class="flex justify-between w-full">
+                    <a class="food-name-link hover:underline" href="/nutrient/<%= fact.foods.first.slug %>"><%= fact.foods.first.name %></a>
+                    <div class="hidden md:inline-block bg-gray-700 text-white rounded h-6 px-2 pt-1">
+                      <div class="text-sm "><%= time_ago_in_words(fact.created_at) %></div>
+                    </div>
+                  </div>
+                  <a class=" food-title md:hidden text-xl pl-3 mt-1 hover:underline" href="/nutrient/<%= fact.foods.first.slug %>?fact=<%= fact.id %>"><%= fact.headline %></a>
                 </div>
               </div>
-              <a class=" food-title md:hidden text-xl pl-3 mt-1 hover:underline" href="/nutrient/<%= fact.foods.first.slug %>?fact=<%= fact.id %>"><%= fact.headline %></a>
             </div>
+            <div class=""></div>
+          </div>
+          <a class=" food-title hidden md:inline-block text-xl mt-1 hover:underline" href="/nutrient/<%= fact.foods.first.slug %>?fact=<%= fact.id %>"><%= fact.headline %></a>
+          <div class=" mt-2 text-blue-500 p-200 p-2 border lh-12 mr-2">
+            <%= fact.summary %>
           </div>
         </div>
-        <div class=""></div>
-      </div>
-      <a class=" food-title hidden md:inline-block text-xl mt-1 hover:underline" href="/nutrient/<%= fact.foods.first.slug %>?fact=<%= fact.id %>"><%= fact.headline %></a>
-      <div class=" mt-2 text-blue-500 p-200 p-2 border lh-12 mr-2">
-        <%= fact.summary %>
-      </div>
     </div>
+    <div></div>
+    <div class="flex headline-holder"></div>
   </div>
-  <div></div>
-  <div class="flex headline-holder"></div>
-</div>
+<% end %>

@@ -1,6 +1,6 @@
 <div>
   Foods
-  <% Food.all.limit(7).each do |food| %>
+  <% Food.all.limit(5).each do |food| %>
       <a href="/nutrient/<%= food.slug %>" >
         <div class="mt-1">
             <div class="bg-white p-2 border rounded hover:bg-blue-100 cursor-pointer flex">
