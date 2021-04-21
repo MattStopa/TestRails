@@ -1,5 +1,6 @@
-class Admin::FactsController < ApplicationController
+class Admin::FactsController < Admin::AdminController
   before_action :set_fact, only: %i[ show edit update destroy ]
+  
 
   # GET /facts or /facts.json
   def index

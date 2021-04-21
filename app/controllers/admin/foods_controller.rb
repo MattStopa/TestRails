@@ -1,7 +1,7 @@
 require 'aws-sdk-s3'
 
 
-class Admin::FoodsController < ApplicationController
+class Admin::FoodsController < Admin::AdminController
   before_action :set_food, only: %i[ show edit update destroy ]
 
   # GET /foods or /foods.json
