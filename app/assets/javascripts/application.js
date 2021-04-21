@@ -16,12 +16,10 @@
 //= require_tree .
 //= require stimulus
 
-
-
-
 //= require controllers/tag_picker_controller
 //= require controllers/search_bar_controller
 //= require controllers/spreadsheet_controller
+//= require controllers/file_upload_controller
 
 setTimeout( function() {
   window.application = Stimulus.Application.start()

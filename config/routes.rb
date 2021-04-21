@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :facts
+    post '/foods/upload_image', to: 'foods#upload_image'
     resources :foods
     resources :tags
     resources :books

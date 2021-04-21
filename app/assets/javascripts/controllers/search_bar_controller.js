@@ -12,15 +12,15 @@ setTimeout( function() {
 
         let self=  this;
         Rails.ajax({
-            url: "/search/" + this.inputTarget.value,
-            type: "get",
-            data: "",
-            success: function(data) {
-              self.listOfFoodsTarget.innerHTML = ""
-              self.listOfFoodsTarget.append(data.children[0].children[1].children[0])
-            },
-            error: function(data) {}
-          })
+          url: "/search/" + this.inputTarget.value,
+          type: "get",
+          data: "",
+          success: function(data) {
+            self.listOfFoodsTarget.innerHTML = ""
+            self.listOfFoodsTarget.append(data.children[0].children[1].children[0])
+          },
+          error: function(data) {}
+        })
 
       }
 

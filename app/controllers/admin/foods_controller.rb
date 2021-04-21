@@ -1,3 +1,6 @@
+require 'aws-sdk-s3'
+
+
 class Admin::FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
 
@@ -17,6 +20,28 @@ class Admin::FoodsController < ApplicationController
 
   # GET /foods/1/edit
   def edit
+  end
+
+  def upload_image
+    bucket_name = 'nutrient-facts'
+    object_key = 'my-file.txt'
+    region = 'us-east-1'
+
+
+    aws = Rails.application.credentials.aws
+
+    creds = Aws::Credentials.new(aws[:access_key_id], aws[:secret_access_key])
+    s3_client = Aws::S3::Client.new(region: region, credentials: creds)
+
+    s3 = Aws::S3::Resource.new(
+        credentials: creds,
+        region: 'us-east-1'
+    )
+
+    obj = s3.bucket('nutrient-facts').object(Time.now.to_f.to_s + "-" + params['filename'].original_filename)
+    obj.upload_file(params['filename'].tempfile.path, acl:'public-read')
+    render json: { url: obj.public_url }
+
   end
 
   # POST /foods or /foods.json

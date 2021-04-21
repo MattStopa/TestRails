@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+#edit cred in docker 
+EDITOR="vi" rails credentials:edit
