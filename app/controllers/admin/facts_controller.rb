@@ -29,7 +29,7 @@ class Admin::FactsController < Admin::AdminController
 
     respond_to do |format|
       if @fact.save
-        format.html { redirect_to @fact, notice: "Fact was successfully created." }
+        format.html { redirect_to [:admin, :facts], notice: "Fact was successfully created." }
         format.json { render :show, status: :created, location: @fact }
       else
         format.html { render :new, status: :unprocessable_entity }

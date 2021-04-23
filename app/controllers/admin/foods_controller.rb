@@ -54,7 +54,7 @@ class Admin::FoodsController < Admin::AdminController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: "Food was successfully created." }
+        format.html { redirect_to [:admin, :foods], notice: "Food was successfully created." }
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -84,7 +84,7 @@ class Admin::FoodsController < Admin::AdminController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to foods_url, notice: "Food was successfully destroyed." }
+      format.html { redirect_to redirect_to [:admin, :foods], notice: "Food was successfully destroyed." }
       format.json { head :no_content }
     end
   end
