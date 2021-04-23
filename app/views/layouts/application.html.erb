@@ -11,19 +11,21 @@
   </head>
 
   <body class=" text-sm">
-
-      <div class="app-container container m-auto">
+    <div class="app-container container m-auto ">
+      <div class="fixed w-full ">
+        <div class=" app-container w-full">
           <div class="bg-gray-100 px-3 py-3 shadow-l  flex justify-between">
-        <a class="bg-purple-500 inline-block p-3 py-2 text-white rounded logo" >
-          NutrientStats
-        </a>
+            <a class="bg-purple-500 inline-block p-3 py-2 text-white rounded logo" >
+              NutrientStats
+            </a>
 
-        <%= render "components/search" %> 
-
-        
+            <%= render "components/search" %> 
+          </div>
+        </div>
       </div>
     </div>
-    <div class="app-container container m-auto">
+
+    <div class="app-container container m-auto pt-12  ">
       <%= yield %>
     </div>
   </body>
