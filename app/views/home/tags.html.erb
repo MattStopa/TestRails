@@ -1,6 +1,6 @@
-<div class="md:flex">
+<div class="md:flex ">
   <%= render "sidebar" %>
-  <div class="w-full">
+  <div class="w-full   md:ml-48  md:mr-36">
     <div class="p-4 inline-block mt-2 bg-yellow-500 text-white py-1 rounded ml-4 mt-3 text-xl"><%= @name %></div>
     <% @facts.each do |fact|  %>
       <%= render 'fact_display', {fact: fact} %>
