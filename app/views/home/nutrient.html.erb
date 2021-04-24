@@ -1,7 +1,7 @@
 <div class="md:flex">
   <%= render "sidebar" %>
 
-  <div class="mb-10 w-full   md:ml-48 ">
+  <div class="mb-10 w-full md:ml-48 mt-2">
     <div>
 
       <div class="bg-gray-100 px-3 py-3 m-5 mt-3 mb-3 ml-4 shadow-lg rounded ">
@@ -59,7 +59,7 @@
               <div class="ml-0 p-2">
                 <div class="break-all" style="margin-top:14px">
                   <% fact.links.split("\n").each do |link|  %>
-                    <div><b>[Source]</b> <a class="hover:underline" href="<%= link %>"><%= link %></a></div>
+                    <div><b>[Source]</b> <a target="_blank" class="hover:underline" href="<%= link %>"><%= link %></a></div>
                   <% end %>
                 </div>
               </div>
