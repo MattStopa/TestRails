@@ -188,3 +188,7 @@ input,select,textarea {
       width: 400px;
   }
 }
+
+popup-height {
+  max-height: 36rem;
+}

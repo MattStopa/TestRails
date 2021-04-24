@@ -1,7 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Todo
+
+Get Search Working
+Make specific nutrient fact page select and move fact to the top.
+
+
 
 Things you may want to cover:
 

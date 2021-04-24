@@ -1,6 +1,6 @@
 <div>
   Foods
-  <% Food.all.where(published: true).limit(5).each do |food| %>
+  <% Food.all.where(published: true).each do |food| %>
       <a href="/nutrient/<%= food.slug %>" >
         <div class="mt-1">
             <div class="bg-white p-2 border rounded hover:bg-blue-100 cursor-pointer flex">
@@ -12,4 +12,11 @@
         </div>
       </a>
   <% end %>
+  Tags
+  <div>
+    <% Tag.all.each do |tag| %>
+      <%= render 'components/tag', {tag: tag }%>
+      
+    <% end %>
+  </div>
 </div>
