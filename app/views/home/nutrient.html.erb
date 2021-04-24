@@ -6,7 +6,7 @@
 
       <div class="bg-gray-100 px-3 py-3 m-5 mt-3 mb-3 ml-4 shadow-lg rounded ">
         <div class="md:flex">
-          <img src="<%= @food.image_url %>" class="md:w-40 md:h-40 rounded">
+          <img src="<%= @food.image_url %>" class="w-full md:w-40 md:h-40 rounded">
           <div>
             <h2 class="mt-4 md:mt-0 md:ml-5 text-4xl flex"><%= @food.name %></h2>
             <% if @food.description && @food.description.length > 0 %>
