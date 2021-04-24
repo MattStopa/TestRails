@@ -6,7 +6,7 @@ class Admin::FoodsController < Admin::AdminController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.all.order("created_at": "desc")
   end
 
   # GET /foods/1 or /foods/1.json

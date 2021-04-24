@@ -4,7 +4,7 @@ class Admin::FactsController < Admin::AdminController
 
   # GET /facts or /facts.json
   def index
-    @facts = Fact.all
+    @facts = Fact.all.order(updated_at: :desc)
   end
 
   # GET /facts/1 or /facts/1.json

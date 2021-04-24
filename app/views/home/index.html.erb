@@ -8,7 +8,7 @@
 
       <div class="">
         <div>
-          <% Fact.includes([:foods, :food_facts]).left_outer_joins(:foods).where.not( foods: { id: nil }).order(created_at: :desc).limit(10).each do |fact| %>
+          <% Fact.includes([:foods, :food_facts]).left_outer_joins(:foods).where.not( foods: { id: nil }).where( foods: { published: true }).order(created_at: :desc).limit(10).each do |fact| %>
             <%= render 'fact_display', { fact: fact } %>
 
           <% end %>
