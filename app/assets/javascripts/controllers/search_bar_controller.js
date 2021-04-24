@@ -3,32 +3,35 @@ setTimeout( function() {
 
     console.log(window.application)
     application.register("search-bar", class extends Stimulus.Controller {
-      static get targets() { return [ "listOfFoods", "input" ]}
+      static get targets() { return [ "listOfFoods", "input", "foodsList", "tagsList" ]}
                  
       initialize() {
       }
 
-      change(e) {
+      handleSearchItems(e, target) {
+        if(this.inputTarget.value.length == 0) {
+          for(let food of target.querySelectorAll('a')) { 
+            food.classList.remove('hidden')
+          }
+          return
+        }
 
+        console.log(target.querySelectorAll('a'))
+
+        for(let food of target.querySelectorAll('a')) { 
+          let result = food.getAttribute('data-value').search(new RegExp(e.target.value, "i"))
+          result === -1 ? food.classList.add("hidden") : food.classList.remove('hidden')
+        }
+      }
+
+      change(e) {
+        
         this.listOfFoodsTarget.classList.remove("no-show")
 
-        // for(let food of this.listOfFoodsTarget.querySelectorAll('.image-link')) { 
-        //   food.setAttribute('src', food.getAttribute('data-src'))
-        // }
+        this.handleSearchItems(e, this.foodsListTarget)
+        this.handleSearchItems(e, this.tagsListTarget)
 
-        if(this.inputTarget.value.length == 0) return
 
-        let self=  this;
-        Rails.ajax({
-          url: "/search/" + this.inputTarget.value,
-          type: "get",
-          data: "",
-          success: function(data) {
-            self.listOfFoodsTarget.innerHTML = ""
-            self.listOfFoodsTarget.append(data.children[0].children[1].children[0])
-          },
-          error: function(data) {}
-        })
 
       }
 
