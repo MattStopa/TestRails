@@ -189,6 +189,6 @@ input,select,textarea {
   }
 }
 
-popup-height {
+.popup-height {
   max-height: 36rem;
 }
