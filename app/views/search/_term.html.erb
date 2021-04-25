@@ -1,11 +1,11 @@
 <div>
   <div class="flex justify-between">
     <div>Foods</div>
-    <div class="p-2 py-0 bg-gray-500 text-white rounded">Close</div>
+    <div class="p-2 py-0 bg-gray-500 text-white rounded pointer-cursor">Close</div>
   </div>
   <div data-target="search-bar.foodsList">
     <% Food.all.where(published: true).each do |food| %>
-        <a href="/nutrient/<%= food.slug %>" data-value="<%= food.name %>">
+        <a href="/nutrient/<%= food.slug %>" data-value="<%= food.name %>" class="inline-block">
           <div class="mt-1">
               <div class="bg-white p-2 border rounded hover:bg-blue-100 cursor-pointer flex">
 
