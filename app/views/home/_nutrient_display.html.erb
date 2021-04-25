@@ -7,7 +7,7 @@
         <div class="w-full">
             <div class="flex justify-between">
             <div class="ml-2 text-xl mt-1 text-3xl food-title"><%= fact.headline %></div>
-            <%= image_tag 'copy', "data-action": "click->nutrient-display#copy", "data-url": "https://www.nutrientstats.com/nutrient/#{@food.slug}/?fact=#{@highlighted_fact.id}", class:"h-8 cursor-pointer", title: "Copy Direct Link To Clipboard" %>
+            <%= image_tag 'copy', "data-action": "click->nutrient-display#copy", "data-url": "https://www.nutrientstats.com/nutrient/#{@food.slug}/?fact=#{fact.id}", class:"h-8 cursor-pointer", title: "Copy Direct Link To Clipboard" %>
             </div>
             <div class="ml-2 mt-4 text-blue-500 p-200 p-2 border"><%= fact.summary %></div>
             <div class="ml-3 mt-2">
