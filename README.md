@@ -39,3 +39,6 @@ docker cp f69c242e5edc:/dump/whatevername ./whatevername
 
 Restore 
  heroku pg:backups:restore "https://nutr222.s3.amazonaws.com/whatevername" postgresql-shaped-12345 --app your-app-name
+
+How to set up the domain name
+ https://stackoverflow.com/questions/56861540/cannot-connect-heroku-to-custom-google-domain
