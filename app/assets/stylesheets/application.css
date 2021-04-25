@@ -192,3 +192,7 @@ input,select,textarea {
 .popup-height {
   max-height: 36rem;
 }
+
+.highlighted-fact { 
+  border: 3px solid #10b981;
+}

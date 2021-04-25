@@ -4,6 +4,11 @@
   <div class="mb-10 w-full md:ml-48 mt-2">
     <div>
 
+      <% if(@highlighted_fact) %>
+        <div class="ml-5 text-3xl font-bold mt-6">Highlighted Fact for <%= @food.name %></div>
+        <%= render 'nutrient_display', fact: @highlighted_fact, index: -1, highlighted: true %>
+        <div class="ml-5 text-3xl font-bold mt-6">More Info</div>
+      <% end %>
       <div class="bg-gray-100 px-3 py-3 m-5 mt-3 mb-3 ml-4 shadow-lg rounded ">
         <div class="md:flex">
           <img src="<%= @food.image_url %>" class="w-full md:w-40 md:h-40 rounded">
@@ -31,7 +36,7 @@
         </div>
         <div>
           <div class="text-xl font-medium mb-2 mt-3">Highlights</div>
-          <% @food.facts.each_with_index do |fact, index| %>
+          <% @facts_to_show.each_with_index do |fact, index| %>
             <div class="text-lg flex ">
               <div class="mt-1 inline-block h-7 mr-2 p-2 bg-green-500 text-white rounded py-0 w-8 text-center"><%= index + 1 %></div>
               <a class="underline inline-block cursor-pointer hover:text-green-800 mt-1" href="#fact-<%= index + 1%>"><%= fact.headline %></a>
@@ -41,38 +46,8 @@
       </div>
       <div class="ml-8 text-3xl font-bold">Facts</div>
 
-      <% @food.facts.each_with_index do |fact, index| %>
-        <div class="bg-white px-3 py-3 m-5 mt-3 mb-3 ml-4 shadow-lg rounded flex highlighted-fact">
-          <div class="flex w-full" id="fact-<%= index + 1 %>">
-            <div class="rounded bg-green-500 border absolute -ml-8  px-2 py-2  rounded text-white">
-              #<%= index + 1 %>
-            </div>
-            <div class="w-full">
-              <div class="ml-2 text-xl mt-1 text-3xl food-title"><%= fact.headline %></div>
-              <div class="ml-2 mt-4 text-blue-500 p-200 p-2 border"><%= fact.summary %></div>
-              <div class="ml-3 mt-2">
-                <% if(fact.links.split("\n").any? { |i| @found = i;  i.include?('youtube')  })%>
-
-                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/<%= @found.split("v=").second.split("&").first %>" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                <% end %>
-              </div>
-              <div class="ml-0 p-2">
-                <div class="break-all" style="margin-top:14px">
-                  <% fact.links.split("\n").each do |link|  %>
-                    <div><b>[Source]</b> <a target="_blank" class="hover:underline" href="<%= link %>"><%= link %></a></div>
-                  <% end %>
-                </div>
-              </div>
-              <div class="ml-2 inline-block">
-                <% fact.tags.each do |tag| %>
-                  <%= render 'components/tag', {tag: tag} %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div></div>
-          <div class="flex headline-holder"></div>
-        </div>
+      <% @facts_to_show.each_with_index do |fact, index| %>
+        <%= render 'nutrient_display', fact: fact, index: index %>
       <% end %>
     </div>
   </div>

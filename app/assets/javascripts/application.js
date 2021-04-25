@@ -20,6 +20,7 @@
 //= require controllers/search_bar_controller
 //= require controllers/spreadsheet_controller
 //= require controllers/file_upload_controller
+//= require controllers/nutrient_display_controller
 
 setTimeout( function() {
   window.application = Stimulus.Application.start()
