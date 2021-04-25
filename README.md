@@ -42,3 +42,5 @@ Restore
 
 How to set up the domain name
  https://stackoverflow.com/questions/56861540/cannot-connect-heroku-to-custom-google-domain
+
+BUMP
